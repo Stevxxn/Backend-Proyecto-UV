@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const uvController = require('../controllers/uv.controllers');
-const ip = localhost = 'http://3.18.212.174:3000/api';
+const ip = 'http://3.18.212.174:3000/api';
 router.post('/uv', uvController.addData);
 router.get('/uv', uvController.getData);
+router.get('/uv/filter', uvController.getDataByDate);
+router.get('/uv/latest', uvController.getLatestData);
 
 // Ruta de bienvenida (NUEVA)
 router.get('/', (req, res) => {
